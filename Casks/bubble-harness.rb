@@ -14,13 +14,16 @@ cask "bubble-harness" do
 
   depends_on arch: :arm64
   depends_on formula: "node"
+  depends_on :macos
 
   app "Bubble Harness.app"
 
   # Not notarized yet: clear the download quarantine so Gatekeeper doesn't block the first open.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Bubble Harness.app"]
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:           ["-dr", "com.apple.quarantine", "{{appdir}}/Bubble Harness.app"],
+        writable_paths: ["Bubble Harness.app"],
+        writable_base:  :appdir
   end
 
   zap trash: [
