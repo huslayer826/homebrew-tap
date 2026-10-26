@@ -1,6 +1,6 @@
 cask "bubble-harness" do
-  version "0.1.2"
-  sha256 "b54bf83b8833bcf5ef703d40369fee52e3312ea69f93c3939374e4e689c92e8d"
+  version "0.1.3"
+  sha256 "1fe5a9cd2d665bffbb38b6acb42304eb711229f48cdf8b5991c17abfc2d1f423"
 
   url "https://github.com/huslayer826/bubble-harness/releases/download/v#{version}/Bubble-Harness-arm64.dmg"
   name "Bubble Harness"
