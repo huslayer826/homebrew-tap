@@ -14,7 +14,7 @@ cask "bubble-harness" do
 
   depends_on arch: :arm64
   depends_on formula: "node"
-  depends_on macos: ">= :big_sur"
+  depends_on :macos
 
   app "Bubble Harness.app"
 
