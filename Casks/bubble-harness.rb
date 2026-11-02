@@ -1,6 +1,6 @@
 cask "bubble-harness" do
-  version "0.1.4"
-  sha256 "94bcac3b318e44f41e9ab07d1d57777f8a1cf1c8a150a87290a49c2a434a2d62"
+  version "0.1.5"
+  sha256 "e22fc0c97f252552b943227821f43c26be8c94eb92e8a919eaad3785a78cf70a"
 
   url "https://github.com/huslayer826/bubble-harness/releases/download/v#{version}/Bubble-Harness-arm64.dmg"
   name "Bubble Harness"
@@ -14,7 +14,7 @@ cask "bubble-harness" do
 
   depends_on arch: :arm64
   depends_on formula: "node"
-  depends_on :macos
+  depends_on macos: ">= :big_sur"
 
   app "Bubble Harness.app"
 
@@ -27,9 +27,11 @@ cask "bubble-harness" do
   end
 
   zap trash: [
+    "~/.bubble-harness",
     "~/Library/Application Support/dev.bubbleharness.prototype",
     "~/Library/Caches/dev.bubbleharness.prototype",
     "~/Library/HTTPStorages/dev.bubbleharness.prototype",
+    "~/Library/LaunchAgents/dev.bubbleharness.core.*.plist",
     "~/Library/Preferences/dev.bubbleharness.prototype.plist",
     "~/Library/Saved Application State/dev.bubbleharness.prototype.savedState",
     "~/Library/WebKit/dev.bubbleharness.prototype",
